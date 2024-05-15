@@ -54,49 +54,6 @@ def analyze_g_ratio(excel_path, output_file, histogram_folder,results_sheet_name
     print(f"Statistical results saved to {output_file} in the sheet named '{results_sheet_name}'")
 
 
-'''def analyze_g_ratio(excel_path, output_file, histogram_folder):
-    xls = pd.ExcelFile(excel_path)
-    results = []
-    # Ensure the histogram directory exists
-    os.makedirs(histogram_folder, exist_ok=True)  
-
-    for sheet_name in xls.sheet_names:
-        if "Subset" in sheet_name:
-            df = pd.read_excel(xls, sheet_name=sheet_name)
-            exp_number = sheet_name.split('_')[0]
-            g_ratio_col = f'G-Ratio_{exp_number}'
-
-            if g_ratio_col in df.columns:
-                data = df[g_ratio_col].dropna()
-
-                if len(data) < 3:
-                    continue
-
-                mean = np.mean(data)
-                median = np.median(data)
-                std = np.std(data, ddof=1)  
-                ci = t.interval(0.95, len(data)-1, loc=mean, scale=std/np.sqrt(len(data)))
-                ci_low, ci_up = ci
-                shapiro_test = shapiro(data)
-                shapiro_stat, shapiro_p_value = shapiro_test
-                normality = 'Yes' if shapiro_p_value > 0.05 else 'No'
-
-                results.append({
-                    'EXP_name': sheet_name,
-                    'Median': median,
-                    'Mean': mean,
-                    'Standard Deviation': std,
-                    '95% CI Lower': ci_low,
-                    '95% CI Upper': ci_up,
-                    'Shapiro-Stat': shapiro_stat,
-                    'Shapiro-p-value': shapiro_p_value,
-                    'Normality': normality
-                })
-
-    # Write results to an Excel file
-    results_df = pd.DataFrame(results)
-    results_df.to_excel(output_file, index=False)
-    print(f"Statistical results saved to {output_file}")'''
 
 
 def plot_g_ratio_frequency(df, g_ratio_col, subset_name, folder_path, display=False):

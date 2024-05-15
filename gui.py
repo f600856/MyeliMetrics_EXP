@@ -134,20 +134,6 @@ def process_and_save_subsets_command():
         messagebox.showerror("Error", "No data loaded.")
 
 
-'''def analyze_g_ratio_handler():
-    input_file_path = filedialog.askopenfilename(title="Open Excel file for analysis", filetypes=[("Excel files", "*.xlsx"), ("Excel files", "*.xls")])
-    output_file_path = filedialog.asksaveasfilename(defaultextension=".xlsx", filetypes=[("Excel files", "*.xlsx")], title="Save G-Ratio analysis results as")
-    histogram_folder_path = filedialog.askdirectory(title="Select folder to save histograms")
-
-    if input_file_path and output_file_path and histogram_folder_path:
-        try:
-            analyze_g_ratio(input_file_path, output_file_path, histogram_folder_path)  
-            plot_all_g_ratio_frequencies(input_file_path, histogram_folder_path, display=True)
-            messagebox.showinfo("Success", "G-Ratio analysis and histograms saved successfully.")
-        except Exception as e:
-            messagebox.showerror("Error", f"An error occurred: {e}")
-    else:
-        messagebox.showerror("Error", "Please ensure you have selected an Excel file, an output file, and a histogram output folder.")'''
 
 def analyze_g_ratio_handler():
     messagebox.showinfo("Select File", "Please select the subsets file for G-Ratio analysis.")
