@@ -1,0 +1,8 @@
+diptest
+matplotlib
+numpy
+openpyxl
+openpyxl
+pandas
+Pillow
+scipy
