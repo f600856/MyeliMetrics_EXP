@@ -52,7 +52,7 @@ def process_fiber_data_handler():
 def calculate_g_ratio_handler():
     global df
     if df is not None:
-        experiments = [('EXP1_Ax', 'EXP1_My'), ('EXP2_Ax', 'EXP2_My'), ('EXP3_Ax', 'EXP3_My'),('EXP4_Ax', 'EXP4_My')]
+        experiments = [('EXP1_Ax', 'EXP1_My'), ('EXP2_Ax', 'EXP2_My'), ('EXP3_Ax', 'EXP3_My'),]
         df = calculate_g_ratio(df, experiments)
         messagebox.showinfo("Success", "G-ratio calculated successfully.")
     else:
@@ -193,7 +193,7 @@ def modality_test_handler():
         messagebox.showerror("Error", "No file has been loaded. Please load a file first.")
         return
 
-    experiments = ['CTL1', 'CTL2', 'CTL3']  
+    experiments = ['EXP1', 'EXP2', 'EXP3']  
     num_subsets = 6  
     success = True
 
